@@ -1,0 +1,21 @@
+.HeroComp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  padding: 15px 0px;
+
+  background-color: rgb(236, 236, 236);
+
+  overflow-y: auto;
+
+  &_Wrap {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 30px);
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,64 @@
+$g_1: #a0a0a0;
+
+.HeaderComp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px 40px 0px;
+
+  &_Wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 30px);
+    height: fit-content;
+    gap: 10px;
+
+    &_Create {
+      cursor: pointer;
+      padding: 10px 25px;
+      background-color: rgb(35, 35, 35);
+      border-radius: 10px;
+      color: white;
+    }
+
+    &_Search {
+      display: flex;
+      align-items: center;
+      flex: 1;
+
+      input {
+        padding: 10px 25px;
+        border-radius: 10px;
+        width: 30%;
+      }
+    }
+
+    &_SortWrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &_Text {
+        color: $g_1;
+        font-weight: 500;
+      }
+
+      &_Btn {
+        cursor: pointer;
+        padding: 10px 25px;
+        background-color: rgb(35, 35, 35);
+        border-radius: 10px;
+        color: white;
+        opacity: 0.5;
+
+        transition: all 0.2s ease-in-out;
+      }
+
+      &_BtnActive {
+        opacity: 1;
+      }
+    }
+  }
+}
