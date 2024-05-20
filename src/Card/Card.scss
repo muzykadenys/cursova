@@ -1,5 +1,5 @@
 $main_padding: 20px;
-$glob_round: 5px;
+$glob_round: 8px;
 
 .CardEl {
   display: flex;
@@ -62,7 +62,7 @@ $glob_round: 5px;
     mask: var(--mask);
 
     &_Btn {
-      border-radius: 5px;
+      border-radius: 8px;
       border: 1px solid $g_1;
       color: $g_1;
       padding: 7px 40px;

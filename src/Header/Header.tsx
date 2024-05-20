@@ -1,24 +1,26 @@
-import { valueSortBy } from "@/other/ConstValues";
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import { valueSortBy } from '@/other/ConstValues'
+import { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
 type HeaderType = {
-  searchVal: string;
-  setSearchVal: Dispatch<SetStateAction<string>>;
-  sortBy: string;
-  setSortBy: Dispatch<SetStateAction<string>>;
-};
+  searchVal: string
+  setSearchVal: Dispatch<SetStateAction<string>>
+  sortBy: string
+  setSortBy: Dispatch<SetStateAction<string>>
+}
 
 function Header(props: HeaderType) {
-  const { searchVal, setSearchVal, sortBy, setSortBy } = props;
+  const { searchVal, setSearchVal, sortBy, setSortBy } = props
 
   const SetOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchVal(e.target.value);
-  };
+    setSearchVal(e.target.value)
+  }
 
   return (
     <div className="HeaderComp">
       <div className="HeaderComp_Wrap">
-        <div className="HeaderComp_Wrap_Create">Add Ticket</div>
+        <label htmlFor="my_modal_7" className="HeaderComp_Wrap_Create">
+          Add Ticket
+        </label>
 
         <div className="HeaderComp_Wrap_Search">
           <input
@@ -33,12 +35,12 @@ function Header(props: HeaderType) {
 
           <div
             className={`HeaderComp_Wrap_SortWrap_Btn HeaderComp_Wrap_SortWrap_Btn${
-              sortBy === valueSortBy.destination ? "Active" : ""
+              sortBy === valueSortBy.destination ? 'Active' : ''
             }`}
             onClick={() => {
               setSortBy((el: string) =>
-                el === valueSortBy.destination ? "" : valueSortBy.destination
-              );
+                el === valueSortBy.destination ? '' : valueSortBy.destination,
+              )
             }}
           >
             By Destination
@@ -46,16 +48,20 @@ function Header(props: HeaderType) {
 
           <div
             className={`HeaderComp_Wrap_SortWrap_Btn HeaderComp_Wrap_SortWrap_Btn${
-              sortBy === valueSortBy.date ? "Active" : ""
+              sortBy === valueSortBy.date ? 'Active' : ''
             }`}
-            onClick={() => setSortBy(valueSortBy.date)}
+            onClick={() =>
+              setSortBy((el: string) =>
+                el === valueSortBy.date ? '' : valueSortBy.date,
+              )
+            }
           >
             By Date
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header
