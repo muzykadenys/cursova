@@ -1,18 +1,69 @@
-import baseApi from "@/other/baseApi";
+import API from '@/other/baseApi'
 
 function useDBHook() {
-  const getAllTickets = async () => {
+  async function getAllTickets() {
     try {
-      //   const res = await baseApi.get("/asfdsd", { withCredentials: true });
+      const res = await API.get('/getAllTickets', { withCredentials: true })
 
-      return { data: [1, 2] };
+      return { data: res.data }
     } catch (error) {
-      console.log("error: getAllTickets");
-      return { error: error };
+      console.log('error: getAllTickets')
+      return { error: error }
     }
-  };
+  }
 
-  return { getAllTickets: getAllTickets };
+  async function addTicket(
+    ticketId: any,
+    destination: any,
+    flightNumber: any,
+    name: any,
+    departureDate: any,
+  ) {
+    try {
+      const data = {
+        ticketId: '123',
+        destination: 'New York',
+        flightNumber: 'ABC123',
+        name: 'John Doe',
+        departureDate: '2024-05-01',
+      }
+      // const data = {
+      //   ticketId: ticketId,
+      //   destination: destination,
+      //   flightNumber: flightNumber,
+      //   name: name,
+      //   departureDate: departureDate,
+      // }
+
+      const res = await API.post('/addTicket', JSON.stringify(data), {
+        withCredentials: true,
+      })
+      // console.log(res)
+      return { data: res.data }
+    } catch (error) {
+      console.log('error: getAllTickets')
+      return { error: error }
+    }
+  }
+
+  async function deleteTicket(ticketId: any) {
+    try {
+      const res = await API.delete(`/deleteTicket?ticketId=${ticketId}`, {
+        withCredentials: true,
+      })
+      console.log(res)
+      return { data: res.data }
+    } catch (error) {
+      console.log('error: getAllTickets')
+      return { error: error }
+    }
+  }
+
+  return {
+    getAllTickets: getAllTickets,
+    addTicket: addTicket,
+    deleteTicket: deleteTicket,
+  }
 }
 
-export default useDBHook;
+export default useDBHook
