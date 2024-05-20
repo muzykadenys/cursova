@@ -52,7 +52,7 @@ function Form() {
     )
     
     if(res.data){
-        // window.location.reload();
+        window.location.reload();
     }
     else{
         setError(res.error.message)
