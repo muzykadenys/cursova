@@ -31,7 +31,7 @@ $g_1: #a0a0a0;
       input {
         padding: 10px 25px;
         border-radius: 10px;
-        width: 30%;
+        width: 50%;
       }
     }
 
@@ -58,6 +58,34 @@ $g_1: #a0a0a0;
 
       &_BtnActive {
         opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 800px) {
+  .HeaderComp {
+    align-items: flex-start;
+    &_Wrap {
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      width: calc(100% - 60px);
+      gap: 30px;
+
+      // &_Create {
+      //  width: 100%;
+      // }
+
+      &_Search {
+        justify-content: center;
+       width: 100%;
+  
+        input {
+          padding: 10px 25px;
+          border-radius: 10px;
+          width: 100%;
+        }
       }
     }
   }
